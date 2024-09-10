@@ -8,7 +8,7 @@ const ProductCart = () => {
     const [searchValue, setSearchValue] = useState();
     const [page, setPage] = useState(1);
     const [totalProducts, setTotalProducts] = useState(0);
-    const itemsPerPage = 10;
+    const itemsPerPage = 8;
 
     const [selectedValue, setSelectedValue] = useState()
     console.log("searchValue", selectedValue)
@@ -51,7 +51,6 @@ const ProductCart = () => {
                 <div className='d-flex justify-content-around mt-4 mb-4 '>
                     <input type="text" placeholder='search' onChange={(e) => setSearchValue(e.target.value)} />
                     <div className="dropdown">
-                        {/* <label htmlFor="filter" className="form-label">Filter:</label> */}
                         <select id="filter" className="form-select" value={selectedValue} onChange={(e) => setSelectedValue(e.target.value)}>
                             <option value="">Select a category</option>
                             <option value="beauty">beauty</option>
@@ -61,6 +60,7 @@ const ProductCart = () => {
                         </select>
                     </div>
                 </div>
+
                 <div className="row">
                     {loading ? <Loader /> : (
                         filterProducts.map((item) => (
@@ -77,7 +77,6 @@ const ProductCart = () => {
                             </div>
                         ))
                     )}
-
                 </div>
 
                 {totalPages > 1 && (

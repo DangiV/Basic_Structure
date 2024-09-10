@@ -9,6 +9,9 @@ const Routing = () => {
             <Routes>
                 <Route path='/' element={<Home />} />
                 <Route path='/cards' element={<ProductCart />} />
+                {/*     eg for private and guest route 
+                <Route path='/' element={<GuestRoute> <Login /> </GuestRoute>} />
+                <Route path='/dashboard' element={<PrivateRoute> <Index /> </PrivateRoute>} /> */}
             </Routes>
         </>
     )
